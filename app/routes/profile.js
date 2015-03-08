@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/:user_id?', function(req, res) {
     var user_id = req.params.user_id;
 
-    if(!user_id){
+    if(!user_id) {
         res.render('profile', {
             user : req.user,
             profile : req.user
