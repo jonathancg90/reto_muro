@@ -1,4 +1,4 @@
-function loginCtrl($scope, requestService, factoryUrl) {
+function loginCtrl($scope, requestService) {
     
     var urlLogin = '';
     $scope.prueba = "Jonathan";
@@ -16,4 +16,4 @@ function loginCtrl($scope, requestService, factoryUrl) {
 
 angular
     .module('loginApp')
-    .controller('loginCtrl', homeCtrl);
+    .controller('loginCtrl', loginCtrl);

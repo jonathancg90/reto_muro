@@ -4,13 +4,9 @@
         $interpolateProvider.startSymbol('{[{');
         $interpolateProvider.endSymbol('}]}');
     }
-    function run(DjangoConstants, $http) {
-        $http.defaults.headers.post['X-CSRFToken'] = DjangoConstants.csrfToken;
-    }
     angular.module('mainApp', [
         'requestApp',
-        'homeApp'
+        'loginApp'
     ])
-        .config(config)
-        .run(run);
+        .config(config);
 })();
