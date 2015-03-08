@@ -6,12 +6,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+//Start app
 var app = express();
-console.log("running!! ")
-// view engine setup
+
+// view engine setup (directories)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
