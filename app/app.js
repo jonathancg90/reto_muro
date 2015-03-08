@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var flash    = require('connect-flash');
 var passport = require('passport');
-var expressSession = require('express-session');
+var session = require('express-session');
 var passportConfig  = require('./config/passport');
 
 //Routes
@@ -30,13 +30,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(expressSession({
+app.use(session({
   secret: 'mySecretKey',
   resave: true,
   saveUninitialized: true
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash()); 
 
 //Routes
