@@ -7,7 +7,7 @@ var router = express.Router();
 // });
 
 router.get('/', function(req, res){
-	res.render('index', {});
+	res.render('index', {partials: {header: 'header'}});
 });
 
 router.post('/login', function(req, res){
