@@ -35,8 +35,8 @@
       }
     </style>
   </head>
-  <body>
-    <nav class="navbar navbar-default">
+  <body ng-app="mainApp">
+    <nav class="navbar navbar-default" ng-module="searchApp" ng-controller="searchCtrl">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -46,9 +46,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">FaceGeek</a>
+          <a class="navbar-brand" href="#">FaceGeek </a>
+
         </div>
         {{#user}}
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <select class="form-control" ng-change="get_profile(profile_select._id)" ng-model="profile_select" ng-options="user.email for user in users">
+              <option value="">---- select profile ----</option>
+            </select>
+          </div>
+        </form>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
@@ -60,7 +68,7 @@
         {{/user}}
       </div><!-- /.container-fluid -->
     </nav>
-    <div class="container" ng-app="mainApp">
+    <div class="container">
       {{#message}} 
           <div class="alert alert-warning alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -82,6 +90,8 @@
 
     <script src="../javascripts/apps/main.js"></script>
     <script src="../javascripts/apps/common/request.js"></script>
+    <script src="../javascripts/apps/modules/search/app.js"></script>
+    <script src="../javascripts/apps/modules/search/searchCtrl.js"></script>
     <script src="../javascripts/apps/modules/profile/app.js"></script>
     <script src="../javascripts/apps/modules/profile/profileCtrl.js"></script>
     {{$scripts}} 
