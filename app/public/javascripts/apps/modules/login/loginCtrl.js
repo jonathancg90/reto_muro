@@ -1,17 +1,29 @@
 function loginCtrl($scope, requestService) {
     
+    var urlLogin = '/login';
     var urlLogin = '';
-    $scope.prueba = "Jonathan";
-    var data = {
-        'username': "kratos",
-        'password': "kratos"
-    };
+    $scope.newUser = {};
 
-    var login_response = requestService.post(urlLogin, data);
+    $scope.register = function(){
+        var login_response = requestService.post(urlLogin, data);
 
-    login_response.success(function(res) {
-        
-    });
+        login_response.success(function(res) {
+            
+        });
+    }
+
+    $scope.login = function(){
+        var data = {
+            'username': "kratos",
+            'password': "kratos"
+        };
+
+        var login_response = requestService.post(urlLogin, data);
+
+        login_response.success(function(res) {
+            
+        });
+    }
 }
 
 angular

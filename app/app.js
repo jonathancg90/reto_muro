@@ -6,9 +6,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var flash    = require('connect-flash');
+var passport = require('passport');
+var expressSession = require('express-session');
+var passportConfig  = require('./config/passport');
 
 //Routes
 var routes = require('./routes/index');
+var auth = require('./routes/auth');
 var users = require('./routes/users');
 //Start app
 var app = express();
@@ -25,9 +30,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(expressSession({
+  secret: 'mySecretKey',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(flash()); 
 
 //Routes
 app.use('/', routes);
+app.use('/', auth);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -39,9 +53,14 @@ app.use(function(req, res, next) {
 
 // error handlers
 
-mongoose.connect('mongodb://127.0.0.1/facegeek');
+
+//Mongodb
+var configDB = require('./config/database.js');
+
+mongoose.connect(configDB.url);
 var User = require('./models/User');
-// mongoose.model('users', {email:String});
+//Passport
+passportConfig(passport, User);
 
 // development error handler
 // will print stacktrace

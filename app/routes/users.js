@@ -16,7 +16,6 @@ router.post('/', function(req, res) {
     var user = new User();    
     user.email = req.body.email; 
 
-    // save the bear and check for errors
     user.save(function(err) {
         if (err)
             res.send(err);
@@ -44,7 +43,6 @@ router.put('/:user_id', function(req, res) {
 
         user.email = req.body.email; 
 
-        // save the bear
         user.save(function(err) {
             if (err)
                 res.send(err);
@@ -52,6 +50,17 @@ router.put('/:user_id', function(req, res) {
             res.json({ message: 'User updated!' });
         });
 
+    });
+});
+
+router.delete('/:user_id',function(req, res) {
+    User.remove({
+        _id: req.params.user_id
+    }, function(err, user) {
+        if (err)
+            res.send(err);
+
+        res.json({ message: 'Successfully deleted' });
     });
 });
 
