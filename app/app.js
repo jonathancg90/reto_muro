@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 //Routes
 var routes = require('./routes/index');
@@ -37,6 +38,10 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
+mongoose.connect('mongodb://127.0.0.1/facegeek');
+var User = require('./models/User');
+// mongoose.model('users', {email:String});
 
 // development error handler
 // will print stacktrace
