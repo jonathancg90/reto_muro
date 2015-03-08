@@ -1,0 +1,7 @@
+
+{{<base}}
+  {{$content}}
+    <p>&rarr; &rarr;Begin content</p>
+    <p>&rarr; &rarr;End content</p>
+  {{/content}}
+{{/base}} 
