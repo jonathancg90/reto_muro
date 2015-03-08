@@ -1,61 +1,59 @@
 {{<base}}
   {{$content}}
-			<form class="form-horizontal" method="post" action="/login">
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			    <div class="col-sm-10">
-			      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+		<form class="form-horizontal" method="post" action="/login">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+		    <div class="col-sm-10">
+		      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <input type="submit" class="btn btn-info" value="Iniciar Session"/>
+		      <a  href="#" class="btn btn-default" data-toggle="modal" data-target="#modalCreate">Registrarse</a>
+		    </div>
+		  </div>
+		</form>
+
+		<!-- Modal -->
+		<div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		  	<form class="form-horizontal" action="signup" method="post">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+						  <div class="form-group">
+						    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+						    <div class="col-sm-10">
+						      <input type="email" class="form-control" required name="email" id="inputEmail3" placeholder="Email">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
+						    <div class="col-sm-10">
+						      <input type="password" class="form-control" required  id="inputPassword3" name="password" placeholder="Password">
+						    </div>
+						  </div>
+						</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			        <input type="submit" class="btn btn-primary" value="Registrar"/>
+			      </div>
+
 			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
-			    <div class="col-sm-10">
-			      <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <input type="submit" class="btn btn-info" value="Iniciar Session"/>
-			      <a  href="#" class="btn btn-default" data-toggle="modal" data-target="#modalCreate">Registrarse</a>
-			    </div>
-			  </div>
-			</form>
-
-
-
-			<!-- Modal -->
-			<div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-dialog">
-			  	<form class="form-horizontal" action="signup" method="post">
-				    <div class="modal-content">
-
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				      </div>
-				      <div class="modal-body">
-							  <div class="form-group">
-							    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-							    <div class="col-sm-10">
-							      <input type="email" class="form-control" required name="email" id="inputEmail3" placeholder="Email">
-							    </div>
-							  </div>
-							  <div class="form-group">
-							    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
-							    <div class="col-sm-10">
-							      <input type="password" class="form-control" required  id="inputPassword3" name="password" placeholder="Password">
-							    </div>
-							  </div>
-							</form>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				        <input type="submit" class="btn btn-primary" value="Registrar"/>
-				      </div>
-
-				    </div>
-				     </form>
-			  </div>
-			</div>
+			     </form>
+		  </div>
+		</div>
 	{{/content}}
 {{/base}} 

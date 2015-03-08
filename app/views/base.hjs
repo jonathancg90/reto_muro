@@ -4,6 +4,19 @@
     <title>Facegeek</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+      .center{
+        text-align: center;
+      }
+      .medium {
+        width: 100px;
+        height: 100px
+      }
+      .small {
+        width: 50px;
+        height: 50px
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -18,15 +31,16 @@
           </button>
           <a class="navbar-brand" href="#">FaceGeek</a>
         </div>
-
+        {{#user}}
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Usuario</a></li>
+            <li><a href="#">{{user.email}}</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
-            <li><a href="#">Salir</a></li>
+            <li><a href="/logout">Salir</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
+        {{/user}}
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container" ng-app="mainApp">
