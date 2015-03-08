@@ -10,6 +10,7 @@ var flash    = require('connect-flash');
 var passport = require('passport');
 var session = require('express-session');
 var passportConfig  = require('./config/passport');
+var authentication  = require('./middlewares/authentication');
 
 //Routes
 var routes = require('./routes/index');
@@ -39,6 +40,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash()); 
+app.use(authentication());
 
 //Routes
 app.use('/', routes);

@@ -22,7 +22,7 @@ router.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
-router.get('/profile/:user_id?', isLoggedIn, function(req, res) {
+router.get('/profile/:user_id?', function(req, res) {
     var user_id = req.params.user_id;
     if(!user_id){
         res.render('profile', {
@@ -42,15 +42,5 @@ router.get('/profile/:user_id?', isLoggedIn, function(req, res) {
         });
     }
 });
-
-function isLoggedIn(req, res, next) {
-
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-        return next();
-    // if they aren't redirect them to the home page
-    req.flash('message', 'Usted no tiene permiso de acceder')
-    res.redirect('/');
-}
 
 module.exports = router;

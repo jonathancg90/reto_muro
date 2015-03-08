@@ -8,7 +8,7 @@ var UserSchema   = new mongoose.Schema({
     comments: [{
     	from: String,
 		comment: String,
-		like: Boolean,
+		like: [],
 		view: Boolean
     }]
 });
