@@ -15,6 +15,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     var user = new User();    
     user.email = req.body.email; 
+    user.comments = [];
 
     user.save(function(err) {
         if (err)
@@ -25,7 +26,7 @@ router.post('/', function(req, res) {
 });
 
 router.get('/:user_id', function(req, res) {
-
+    
     User.findById(req.params.user_id, function(err, user) {
         if (err)
             res.send(err);

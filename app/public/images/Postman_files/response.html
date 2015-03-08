@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)filesystem:chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/temporary/response.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Facegeek</title>
+    <link rel="stylesheet" href="filesystem:chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/temporary/stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+      .center{
+        text-align: center;
+      }
+      .medium {
+        width: 100px;
+        height: 100px
+      }
+      .small {
+        width: 50px;
+        height: 50px
+      }
+      .item {
+        list-style:none;
+      }
+      .comment {
+        margin-bottom: 12px;
+        margin-top: 12px;
+        padding: 10px 0 0px 0px;
+        border: solid 1px #D1D2D7
+      }
+      .comment img {
+        margin: 0px 10px 10px 5px;
+      }
+      .options {
+        border-top: solid 1px #E5E5E5;
+        margin: 10px 0 0 0;
+        background: #E5E5E5;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="filesystem:chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/temporary/response.html#">FaceGeek</a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container" ng-app="mainApp">
+          <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <strong>Warning!</strong> 
+          No se pudo acceder al perfil
+        </div>
+
+		<form class="form-horizontal" method="post" action="filesystem:chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/temporary/login">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+		    <div class="col-sm-10">
+		      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <input type="submit" class="btn btn-info" value="Iniciar Session">
+		      <a href="filesystem:chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/temporary/response.html#" class="btn btn-default" data-toggle="modal" data-target="#modalCreate">Registrarse</a>
+		    </div>
+		  </div>
+		</form>
+
+		<!-- Modal -->
+		<div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		  	<form class="form-horizontal" action="filesystem:chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/temporary/signup" method="post">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+						  <div class="form-group">
+						    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+						    <div class="col-sm-10">
+						      <input type="email" class="form-control" required="" name="email" id="inputEmail3" placeholder="Email">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
+						    <div class="col-sm-10">
+						      <input type="password" class="form-control" required="" id="inputPassword3" name="password" placeholder="Password">
+						    </div>
+						  </div>
+						
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			        <input type="submit" class="btn btn-primary" value="Registrar">
+			      </div>
+
+			    </div></form>
+			     
+		  </div>
+		</div>
+    </div>
+  
+
+    
+
+    
+    
+
+    
+    
+    
+    
+  
+</body></html>

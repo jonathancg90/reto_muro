@@ -1,21 +1,37 @@
 
 {{<base}}
   {{$content}}
-  <div class="row">
+
+  <div class="row" ng-module="profileApp" ng-controller="profileCtrl">
 	  <div class="col-md-4 center">
 
-	    	<img src="images/profile.jpg" class="medium">
-	    	<h4>{{ profile.email}}</h4>
+	    	<img src="../images/profile.jpg" class="medium">
+	    	<h4>{{ profile.email}}</h4> 
 	  </div>
 	  <div class="col-md-6">
 	  	<form>
 		  <div class="form-group">
-		    <textarea class="form-control" id="inputComment" placeholder="Enter email"></textarea>
+		    <textarea class="form-control" id="inputComment" placeholder="Enter email" ng-model="comment"></textarea>
 		  </div>
 		    <div class="form-group">
-			      <button type="submit" class="btn btn-success">Publicar</button>
+			      <button type="submit" class="btn btn-success" ng-click="save_comment()">Publicar</button>
 			</div>
 		</form>
+		<ul>
+			{{#profile.comments}}
+				<li class="item">
+					<div class="comment">
+						<img src="../images/profile.jpg" class="small">
+						<span ng-bind="get_email('{{ from }}')"> </span> : {{ comment }}
+						<div class="options">
+							<a href="">Me gusta</a>
+							<a href="">No me gusta</a>
+						</div>
+
+					</div>
+				</li>
+			{{/profile.comments}}
+		</ul>
 	  </div>
 	  <div class="col-md-2">
 
@@ -23,4 +39,12 @@
   </div>
 
   {{/content}}
+  {{$scripts}}
+    	<script>
+    		// var comments = JSON.parse('{{ profile.get_user_comments }}'.replace(/&quot;/g,'"'));
+    		angular.module('profileApp').value("factoryConstant", {
+	            profile_id: '{{ profile.id }}'
+	        });
+    	</script>
+  {{/scripts}}
 {{/base}} 

@@ -9,10 +9,4 @@ router.get('/', function(req, res){
 });
 
 
-// router.get('/profile/:id', function(req, res){
-// 	console.log(req.params);
-// 	res.send(200);
-// });
-
-
 module.exports = router;

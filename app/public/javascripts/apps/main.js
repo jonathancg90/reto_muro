@@ -6,7 +6,7 @@
     }
     angular.module('mainApp', [
         'requestApp',
-        'loginApp'
+        'profileApp'
     ])
         .config(config);
 })();
