@@ -25,8 +25,6 @@ router.post('/', function(req, res) {
 });
 
 router.get('/:user_id', function(req, res) {
-    var user = new User();    
-    user.email = req.body.email; 
 
     User.findById(req.params.user_id, function(err, user) {
         if (err)

@@ -4,7 +4,13 @@ var Schema       = mongoose.Schema;
 
 var UserSchema   = new mongoose.Schema({
     email: String,
-    password: String
+    password: String,
+    comments: [{
+    	from: String,
+		comment: String,
+		like: Boolean,
+		view: Boolean
+    }]
 });
 
 // methods ======================
